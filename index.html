@@ -87,6 +87,9 @@
   .contact .email { font-family: var(--mono); font-size: clamp(18px, 2.4vw, 28px); font-weight: 700; text-underline-offset: 6px; overflow-wrap: anywhere; }
 
   footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 28px; font-size: 15px; color: var(--on-forest-soft); }
+  footer .social { display: flex; flex-wrap: wrap; gap: 20px; }
+  footer .social a { color: var(--birch); text-decoration: none; }
+  footer .social a:hover { text-decoration: underline; text-underline-offset: 4px; }
 </style>
 </head>
 <body>
@@ -165,8 +168,11 @@
 
 <footer class="dark">
   <div class="wrap">
-    <span>© 2026 Forest City Software LLC</span>
-    <span>Cleveland, Ohio</span>
+    <span>© 2026 Forest City Software LLC · Cleveland, Ohio</span>
+    <nav class="social" aria-label="Social">
+      <a href="https://www.linkedin.com/company/forest-city-software-llc/">LinkedIn</a>
+      <a href="https://github.com/forestcitysoftware">GitHub</a>
+    </nav>
   </div>
 </footer>
 
