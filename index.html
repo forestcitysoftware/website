@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forest City Software · Cleveland software studio</title>
+<meta name="description" content="Forest City Software is an independent software studio in Cleveland, Ohio. Web apps, iOS apps, custom tools and technical consulting.">
+<meta property="og:title" content="Forest City Software">
+<meta property="og:description" content="An independent software studio in Cleveland, Ohio.">
+<meta property="og:image" content="https://forestcitysoftware.co/brand/avatar-square-512.png">
+<meta property="og:url" content="https://forestcitysoftware.co/">
+<meta name="theme-color" content="#123D2C">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/logo-tile-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Schibsted+Grotesk:wght@400;500;700;800&display=swap">
+<style>
+  /* Forest band top and bottom, birch page between; one 1160px column. */
+  :root {
+    --forest: #123D2C;
+    --forest-deep: #0B2A1F;
+    --branch: #1E6A47;
+    --leaf: #43A86A;
+    --birch: #F4F6F1;
+    --birch-shade: #E4ECE5;
+    --ink: #13201A;
+    --ink-soft: #3F5248;
+    --on-forest: #D6E4DA;
+    --on-forest-soft: #B9CDBF;
+    --sans: 'Schibsted Grotesk', 'Helvetica Neue', Arial, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: var(--birch); color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.6; }
+  a { color: var(--branch); }
+  a:focus-visible { outline: 3px solid var(--leaf); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding-left: max(16px, 4vw, env(safe-area-inset-left, 0px)); padding-right: max(16px, 4vw, env(safe-area-inset-right, 0px)); }
+  @media (min-width: 1200px) { .wrap { padding-left: 48px; padding-right: 48px; } }
+  .eyebrow { font-family: var(--mono); font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  h2 { font-weight: 800; font-size: clamp(36px, 4.5vw, 54px); line-height: 1.05; letter-spacing: -0.03em; }
+  p { margin: 0; }
+
+  .dark { background: var(--forest); color: var(--birch); }
+  .nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-block: 22px; }
+  .brand { display: flex; align-items: center; gap: 12px; color: var(--birch); text-decoration: none; font-size: 21px; letter-spacing: -0.02em; }
+  .brand img { width: 40px; height: 40px; }
+  .brand b { font-weight: 700; }
+  .brand span { color: var(--on-forest-soft); }
+  .nav nav { display: flex; flex-wrap: wrap; gap: 28px; font-size: 16px; font-weight: 500; }
+  .nav nav a { color: var(--birch); text-decoration: none; }
+  .nav nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+  .hero { display: flex; flex-wrap: wrap; align-items: center; gap: 56px; padding-block: 80px 104px; }
+  .hero-copy { flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+  .hero .eyebrow { color: #8FCFA6; }
+  .hero h1 { font-weight: 800; font-size: clamp(48px, 7vw, 92px); line-height: 0.98; letter-spacing: -0.035em; }
+  .hero p { max-width: 600px; font-size: 21px; line-height: 1.55; color: var(--on-forest); }
+  .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border-radius: 12px; font-size: 17px; text-decoration: none; }
+  .btn-primary { background: var(--leaf); color: var(--forest-deep); font-weight: 700; }
+  .btn-primary:hover { background: #55B97B; }
+  .btn-ghost { border: 1.5px solid #5E8A72; color: var(--birch); font-weight: 500; }
+  .btn-ghost:hover { border-color: var(--birch); }
+  .hero-mark { flex: 1 1 240px; min-width: 0; display: flex; justify-content: center; }
+  .hero-mark img { width: 260px; max-width: 100%; height: auto; }
+
+  section.block { padding-block: 96px; }
+  .services-head { display: flex; flex-direction: column; gap: 12px; max-width: 680px; margin-bottom: 48px; }
+  .services-head .eyebrow, .about .eyebrow { color: var(--branch); }
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
+  .service { display: flex; flex-direction: column; gap: 12px; padding-top: 24px; border-top: 3px solid var(--branch); }
+  .service h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.015em; }
+  .service p { color: var(--ink-soft); }
+
+  .about { background: var(--birch-shade); }
+  .about .wrap { display: flex; flex-wrap: wrap; gap: 48px; }
+  .about-head { flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+  .about-body { flex: 999 1 480px; min-width: 0; max-width: 680px; display: flex; flex-direction: column; gap: 18px; }
+  .about-body p + p { color: var(--ink-soft); }
+
+  .contact .wrap { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  .contact p { max-width: 560px; color: var(--ink-soft); }
+  .contact .email { font-family: var(--mono); font-size: clamp(18px, 2.4vw, 28px); font-weight: 700; text-underline-offset: 6px; overflow-wrap: anywhere; }
+
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 28px; font-size: 15px; color: var(--on-forest-soft); }
+</style>
+</head>
+<body>
+
+<header class="dark">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="/brand/logo-tile-reverse.svg" alt=""><b>Forest City</b> <span>Software</span></a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="top" class="dark">
+    <div class="wrap hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Cleveland, Ohio · 41.4993° N, 81.6944° W</div>
+        <h1>Software built in the Forest City.</h1>
+        <p>Forest City Software is an independent studio in Cleveland. We design and build web apps, iOS apps and custom tools for small businesses and teams, and we stay on to keep them running.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:emalenchek@forestcitysoftware.co">Start a project</a>
+          <a class="btn btn-ghost" href="#services">See what we build</a>
+        </div>
+      </div>
+      <div class="hero-mark"><img src="/brand/logo-tile.svg" alt="" width="260" height="260"></div>
+    </div>
+  </section>
+
+  <section id="services" class="block">
+    <div class="wrap">
+      <div class="services-head">
+        <div class="eyebrow">Services</div>
+        <h2>What we build</h2>
+      </div>
+      <div class="services">
+        <div class="service">
+          <h3>Web and mobile apps</h3>
+          <p>Customer-facing web apps and native iOS apps, from first sketch to App Store release.</p>
+        </div>
+        <div class="service">
+          <h3>Custom tools and automation</h3>
+          <p>Internal dashboards, integrations and scripts that replace spreadsheets and repetitive work.</p>
+        </div>
+        <div class="service">
+          <h3>Technical consulting</h3>
+          <p>Architecture reviews, cloud setup and a second opinion before you hire or buy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="block about">
+    <div class="wrap">
+      <div class="about-head">
+        <div class="eyebrow">About</div>
+        <h2>Rooted in Cleveland</h2>
+      </div>
+      <div class="about-body">
+        <p>Forest City Software was founded in 2026 by Ethan Malenchek. You work directly with the person writing your code, from the first call to the final release.</p>
+        <p>Cleveland has been called the Forest City since the 1850s, when residents lined its streets with shade trees. We like the name for the same reason we like good software: it should be planted carefully and built to last.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="block contact">
+    <div class="wrap">
+      <h2>Have a project in mind?</h2>
+      <p>Send a few lines about what you need. You'll get a reply within one business day.</p>
+      <a class="email" href="mailto:emalenchek@forestcitysoftware.co">emalenchek@forestcitysoftware.co</a>
+    </div>
+  </section>
+</main>
+
+<footer class="dark">
+  <div class="wrap">
+    <span>© 2026 Forest City Software LLC</span>
+    <span>Cleveland, Ohio</span>
+  </div>
+</footer>
+
+</body>
+</html>
